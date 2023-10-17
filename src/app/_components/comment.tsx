@@ -1,7 +1,8 @@
 import React from 'react';
-import { styled } from '@mui/material/styles';
-import { Typography, CardContent } from '@mui/material';
-import { StyledCard } from '../components/customMUI';
+import { Typography, CardContent, IconButton } from '@mui/material';
+import InfoIcon from '@mui/icons-material/Info';
+import { StyledCard } from './customMUI';
+
 
 interface QuoteSectionProps {
     comment: string;
@@ -11,7 +12,10 @@ const QuoteSection : React.FC<QuoteSectionProps>= ({comment}) => {
   return (
     <StyledCard>
       <CardContent>
-        <Typography variant="h6" component="div">
+      <IconButton color="primary">
+        <InfoIcon />
+      </IconButton>
+        <Typography variant="h6" component="span">
           Comment
         </Typography>
         <Typography variant="body2">

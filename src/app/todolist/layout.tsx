@@ -1,4 +1,4 @@
-import HeaderER from '../components/header'
+import HeaderER from '../_components/header'
 
 export default function DashboardLayout({
   children, // will be a page or nested layout
@@ -6,17 +6,13 @@ export default function DashboardLayout({
   children: React.ReactNode
 }) {
   return (
-    <section className='bg-sky-500'>
-      {/* Include shared UI here e.g. a header or sidebar */}
-      <nav></nav>
+    <section className='bg-gray-500 '>
       <HeaderER />
 
-      <div>
-        <h1>list 1</h1>
 
+      <div className='m-4 w-full'>
+        {children}
       </div>
-
-      {children}
     </section>
   )
 }

@@ -1,8 +1,8 @@
 
-import ButtonAppBar from '../components/header'
+import ButtonAppBar from '../_components/header'
 
 export default function Dashboard() {
     return (
-      <ButtonAppBar />
+      <p>Hellow from Dashboard</p>
     )
 }

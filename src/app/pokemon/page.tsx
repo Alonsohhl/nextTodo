@@ -2,6 +2,10 @@
 import { useState } from 'react';
 import { Button, Input, Typography } from '@mui/material';
 import Comment from '../_components/comment';
+import Image from 'next/image'
+import { StyledInput } from '../_components/customMUI';
+import Autocomplete from './AutocompletePokemon/Autocomplete'
+
 
 interface PokemonData {
   name: string;
@@ -32,9 +36,11 @@ function PokemonSearch() {
   return (
     <div>
       <Typography variant="h4">Pokemon Search Section</Typography>
+      <Autocomplete />
+
       <Comment comment="This is a comment from the PokemonSearch component" />
 
-      <Input
+      <StyledInput
         type="text"
         placeholder="Enter Pokemon name"
         value={pokemonName}
@@ -46,6 +52,12 @@ function PokemonSearch() {
       {pokemonData && (
         <div>
           <Typography variant="h5">{pokemonData.name}</Typography>
+          <Image
+            src={pokemonData.sprites.front_default}
+            width={200}
+            height={200}
+            alt={pokemonData.name}
+            />
           <img src={pokemonData.sprites.front_default} alt={pokemonData.name} />
         </div>
       )}
